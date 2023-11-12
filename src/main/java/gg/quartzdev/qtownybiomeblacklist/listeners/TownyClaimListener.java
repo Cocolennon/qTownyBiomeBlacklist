@@ -13,12 +13,11 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 
 public class TownyClaimListener implements Listener {
-
-    qTownyBiomeBlacklist plugin;
-
-    public TownyClaimListener(qTownyBiomeBlacklist plugin){
+    private qTownyBiomeBlacklist mainInstance;
+    
+    public TownyClaimListener(){
+        mainInstance = qTownyBiomeBlacklist.getInstance();
         Bukkit.getLogger().info("Registering Towny Events");
-        this.plugin = plugin;
     }
 
     @EventHandler(priority  = EventPriority.HIGHEST)
